@@ -62,6 +62,7 @@ process.on("uncaughtException", (err) => {
 // catch unhandled promise rejections not thrown from our routes
 process.on("unhandledRejection", (err) => {
   console.log("UNHANDLED REJECTION! 💥 Shutting down...");
+  process.exit(1);
 });
 
 export default app;
