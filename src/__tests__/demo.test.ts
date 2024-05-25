@@ -1,0 +1,9 @@
+import app from "../server";
+import supertest from "supertest";
+
+describe("GET /", () => {
+  it("it should send back some data", async () => {
+    const res = await supertest(app).get("/");
+    expect(res.body.data).toStrictEqual({ age: 5 });
+  });
+});
